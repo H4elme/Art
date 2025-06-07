@@ -10,10 +10,10 @@ add_executable(${this} ${sources})
 
  target_link_libraries(${this} PUBLIC
     gtest_main
-    Art
+    Art_lib
  )
 
  add_test(
    NAME ${this}
-   COMMAND ${this}
+   COMMAND ${this} --gtest_color=1
  )
