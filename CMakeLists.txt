@@ -28,15 +28,19 @@ add_subdirectory(googletest)
 
 set(sources 
     main.cpp
+    cell.cpp
 )
 
-set(headers 
-
+set(headers
+    constants.h 
+    cell.h     
 )
+
+add_subdirectory(test)
 
 add_executable(main ${sources})
+target_compile_definitions(main PRIVATE RAYLIB_DRAWING_ENABLED)
 target_link_libraries(main raylib)
 
 add_library(Art_lib STATIC ${sources})
 
-add_subdirectory(test)
