@@ -10,11 +10,11 @@ int main() {
     SetTargetFPS(60);
     Canvas canvas;
     while (!WindowShouldClose()) {
+        SetMouseCursor(MOUSE_CURSOR_DEFAULT);  
         BeginDrawing();
         ClearBackground(RAYWHITE);
         canvas.draw();
-        Cell a(5, 10, RED);
-        a.fill(RED);
+        canvas.click();
 
         EndDrawing();
     }

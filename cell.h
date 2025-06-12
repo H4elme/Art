@@ -13,6 +13,7 @@ public:
     Cell();
     Cell(int, int);
     Cell(int, int, Color);
+    void fill();
     void fill(Color);
 };
 

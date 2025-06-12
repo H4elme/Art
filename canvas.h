@@ -11,6 +11,7 @@ public:
     Cell cells[maxX][maxY];
     Canvas();
     void draw();
+    void click();
 
 };
 
