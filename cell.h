@@ -10,6 +10,7 @@ public:
     int getX() const;
     int getY() const;
     Color getColor() const;
+    Cell();
     Cell(int, int);
     Cell(int, int, Color);
     void fill(Color);

@@ -29,11 +29,13 @@ add_subdirectory(googletest)
 set(sources 
     main.cpp
     cell.cpp
+    canvas.cpp
 )
 
 set(headers
     constants.h 
-    cell.h     
+    cell.h
+    canvas.h   
 )
 
 add_subdirectory(test)
