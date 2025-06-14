@@ -5,14 +5,18 @@
 
 class Canvas {
     static const int cellSize = 40;
-    static const int maxX = 20;
-    static const int maxY = 20;
+    int x, y;
+    int maxX, maxY;
 public:
-    Cell cells[maxX][maxY];
+    Cell **cells;
+
     Canvas();
+    Canvas(int, int, int, int);
     void draw();
     void click();
-
+    int getMaxX() const;
+    int getMaxY() const;
+    ~Canvas();
 };
 
 #endif

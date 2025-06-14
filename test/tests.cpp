@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include "../cell.h"
 #include "raylib.h"
+#include "../canvas.h"
 
 TEST(checkGtest, test1) {
     EXPECT_TRUE(true);
@@ -26,4 +27,22 @@ TEST(cellTests, test3) {
     Cell cell(5, 6);
     cell.fill(BLUE);
     EXPECT_TRUE(ColorIsEqual(cell.getColor(), BLUE));
+}
+
+TEST(canvasTests, test1) {
+    Canvas canvas;
+    EXPECT_EQ(canvas.getMaxX(), 20);
+    EXPECT_EQ(canvas.getMaxY(), 20);
+}
+
+TEST(canvasTests, test2) {
+    Canvas canvas(0, 0, 20, 20);
+    EXPECT_EQ(canvas.getMaxX(), 20);
+    EXPECT_EQ(canvas.getMaxY(), 20);
+}
+
+TEST(canvasTests, test3) {
+    Canvas canvas(0, 0, 20, 20);
+    canvas.cells[0][0].fill(GREEN);
+    EXPECT_TRUE(ColorIsEqual(canvas.cells[0][0].getColor(), GREEN));
 }

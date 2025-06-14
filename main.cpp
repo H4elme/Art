@@ -6,9 +6,9 @@
 
 
 int main() {
-    InitWindow(maxX * cellSize, maxY * cellSize, "window");
+    Canvas canvas(0, 3, 20, 20);
+    InitWindow(canvas.getMaxX() * cellSize, canvas.getMaxY() * cellSize, "window");
     SetTargetFPS(60);
-    Canvas canvas;
     while (!WindowShouldClose()) {
         SetMouseCursor(MOUSE_CURSOR_DEFAULT);  
         BeginDrawing();

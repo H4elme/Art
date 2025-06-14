@@ -5,6 +5,7 @@ set (this tests)
 set (sources 
    tests.cpp
    ../cell.cpp
+   ../canvas.cpp
 )
 
 add_executable(${this} ${sources})
