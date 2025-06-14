@@ -6,7 +6,7 @@
 #include <vector>
 
 class UIPanel : public UIElement {
-    int x, y, width, height;
+    int x, y, maxX, maxY;
     Color backgroundColor;
     std::vector<UIElement*> elements;
 public:

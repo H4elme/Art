@@ -30,12 +30,15 @@ set(sources
     main.cpp
     cell.cpp
     canvas.cpp
+    UIPanel.cpp
 )
 
 set(headers
     constants.h 
     cell.h
-    canvas.h   
+    canvas.h 
+    UIElement.h 
+    UIPanel.h  
 )
 
 add_subdirectory(test)
