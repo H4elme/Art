@@ -17,13 +17,21 @@ Color ColorButton::getCol() const {
 void ColorButton::draw() {
     #ifdef RAYLIB_DRAWING_ENABLED
     int size = getWidth();
+    if (chosen) {
+        DrawRectangle(getX() * cellSize - outline, getY() * cellSize - outline, 
+        size + outline * 2, size + outline * 2, Fade(GRAY, 0.5f));
+    }
     DrawRectangle(getX() * cellSize, getY() * cellSize, size, size, getCol());
-    DrawRectangle(getX() * cellSize, getY() * cellSize, size, size, Fade(getCol(), 0.5f));
     #endif
 }
 
 void ColorButton::click() {
     if (hover()) {
         onClickCallback(getCol());
+        chosen = 1;
     }
+}
+
+void ColorButton::unchoose() {
+    chosen = 0;
 }

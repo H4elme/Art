@@ -35,10 +35,6 @@ void Canvas::draw() {
     }
 }
 
-Color Canvas::getCurrentColor() const {
-    return currentColor;
-}
-
 void Canvas::click() { 
     if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
         Vector2 mousePos = GetMousePosition();
@@ -64,6 +60,10 @@ Canvas::~Canvas() {
         delete[] cells[i];
     }
     delete[] cells;
+}
+
+Color Canvas::getCurrentColor() const {
+    return currentColor;
 }
 
 void Canvas::setCurrentColor(Color col) {

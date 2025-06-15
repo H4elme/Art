@@ -1,5 +1,4 @@
 #include "raylib.h"
-#include <iostream>
 #include "constants.h"
 #include "cell.h"
 #include "canvas.h"
@@ -13,7 +12,6 @@ int main() {
     const int canvasSize = 19;
     const Color CYAN = {0, 255, 255, 255};
     const Color colors[9] = {BLACK, RED, ORANGE, YELLOW, GREEN, CYAN, BLUE, VIOLET, WHITE};
-
 
     UIPanel panel(0, 0, canvasSize, panelMaxY, panelColor);
     Canvas canvas(0, panelMaxY, canvasSize, canvasSize);
@@ -34,8 +32,10 @@ int main() {
         SetMouseCursor(MOUSE_CURSOR_DEFAULT);  
         BeginDrawing();
         ClearBackground(RAYWHITE);
+
         panel.draw();
         panel.click();
+
         canvas.draw();
         canvas.click();
 

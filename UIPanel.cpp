@@ -3,6 +3,7 @@
 #include "raylib.h"
 #include <vector>
 #include "constants.h"
+#include "colorButton.h"
 
 UIPanel::UIPanel(int x_, int y_, int maxX_, int maxY_, Color backgroundColor_): 
         x(x_), y(y_), maxX(maxX_), maxY(maxY_), backgroundColor(backgroundColor_) {}
@@ -30,9 +31,23 @@ bool UIPanel::hover() {
 void UIPanel::click() {
     if (!IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) return;
     if (!hover()) return;
+
+    ColorButton* currentButton = nullptr;
+
     for (auto el : elements) { 
-        if (el->hover())
+        if (el->hover()) {
             el->click();
+            currentButton = dynamic_cast<ColorButton*>(el);
+        }
+    }
+
+    for (auto el : elements) {
+        if (el != currentButton) {
+            ColorButton* colorButton = dynamic_cast<ColorButton*>(el);
+            if (colorButton) {
+                colorButton->unchoose();
+            }
+        }
     }
 }
 
