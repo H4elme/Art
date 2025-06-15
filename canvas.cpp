@@ -37,9 +37,8 @@ void Canvas::draw() {
 
 void Canvas::click() { 
     if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
-        Vector2 mousePos = GetMousePosition();
-        int mx = mousePos.x / cellSize - x;
-        int my = mousePos.y / cellSize - y;
+        int mx = GetMouseX() / cellSize - x;
+        int my = GetMouseY() / cellSize - y;
         if (mx >= 0 && mx < maxX && my >= 0 && my < maxY) {
             cells[mx][my].fill(getCurrentColor());
         }

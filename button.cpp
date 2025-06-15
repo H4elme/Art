@@ -6,9 +6,11 @@ Button::Button(int x_, int y_, int width_, int height_): x(x_), y(y_), width(wid
 
 bool Button::hover() {
     Vector2 mousePos = GetMousePosition();
-    int mx = mousePos.x / cellSize;
-    int my = mousePos.y / cellSize;
-    return (mx >= x && mx <= x + width && my >= y && my <= y + height);
+    double mx = mousePos.x;
+    double my = mousePos.y;
+    bool res = (mx >= x * cellSize && mx <= x * cellSize + width && 
+        my >= y * cellSize && my <= y * cellSize + height);
+    return res;
 }
 
 int Button::getX() const { return x; }

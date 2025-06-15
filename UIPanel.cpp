@@ -41,6 +41,8 @@ void UIPanel::click() {
         }
     }
 
+    if (currentButton == nullptr) return;
+    
     for (auto el : elements) {
         if (el != currentButton) {
             ColorButton* colorButton = dynamic_cast<ColorButton*>(el);
