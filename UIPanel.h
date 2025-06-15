@@ -8,8 +8,8 @@
 class UIPanel : public UIElement {
     int x, y, maxX, maxY;
     Color backgroundColor;
-    std::vector<UIElement*> elements;
 public:
+    std::vector<UIElement*> elements;
     UIPanel(int x_, int y_, int width_, int height_, Color backgroundColor_);
     void addElement(UIElement* newElement);
     void draw() override;

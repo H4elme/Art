@@ -31,6 +31,8 @@ set(sources
     cell.cpp
     canvas.cpp
     UIPanel.cpp
+    ColorButton.cpp
+    Button.cpp
 )
 
 set(headers
@@ -39,6 +41,8 @@ set(headers
     canvas.h 
     UIElement.h 
     UIPanel.h  
+    ColorButton.h
+    Button.h
 )
 
 add_subdirectory(test)

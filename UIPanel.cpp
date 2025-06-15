@@ -13,7 +13,10 @@ void UIPanel::addElement(UIElement* newElement) {
 
 void UIPanel::draw() {
     #ifdef RAYLIB_DRAWING_ENABLED
-    DrawRectangle(x, y, maxX * cellSize, maxY * cellSize, backgroundColor);
+    DrawRectangle(x, y, (maxX - x) * cellSize, (maxY - y) * cellSize, backgroundColor);
+    for (auto el : elements) {
+        el->draw();
+    }
     #endif
 }
 
@@ -25,9 +28,11 @@ bool UIPanel::hover() {
 }
 
 void UIPanel::click() {
+    if (!IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) return;
     if (!hover()) return;
     for (auto el : elements) { 
-        el->click();
+        if (el->hover())
+            el->click();
     }
 }
 

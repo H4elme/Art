@@ -35,13 +35,17 @@ void Canvas::draw() {
     }
 }
 
+Color Canvas::getCurrentColor() const {
+    return currentColor;
+}
+
 void Canvas::click() { 
     if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
         Vector2 mousePos = GetMousePosition();
         int mx = mousePos.x / cellSize - x;
         int my = mousePos.y / cellSize - y;
         if (mx >= 0 && mx < maxX && my >= 0 && my < maxY) {
-            cells[mx][my].fill(RED);
+            cells[mx][my].fill(getCurrentColor());
         }
     }
         else return;
@@ -60,4 +64,8 @@ Canvas::~Canvas() {
         delete[] cells[i];
     }
     delete[] cells;
+}
+
+void Canvas::setCurrentColor(Color col) {
+    currentColor = col;
 }
