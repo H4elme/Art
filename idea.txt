@@ -1,2 +1,0 @@
-Given topic is art
-The idea is a pixel-style painting by cells app using C++ with raylib library

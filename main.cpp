@@ -26,6 +26,8 @@ int main() {
         panel.addElement(&ColorButtons[i]);
     }
     
+    ColorButtons[0].click();
+
     InitWindow(canvas.getMaxX() * cellSize, canvas.getMaxY() * cellSize, "window");
     SetTargetFPS(60);
     while (!WindowShouldClose()) {

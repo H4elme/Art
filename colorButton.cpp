@@ -26,10 +26,11 @@ void ColorButton::draw() {
 }
 
 void ColorButton::click() {
-    if (hover()) {
+    // already checked in UIPanel
+    //if (hover()) {
         onClickCallback(getCol());
         chosen = 1;
-    }
+    //}
 }
 
 void ColorButton::unchoose() {
