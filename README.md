@@ -15,11 +15,12 @@ You can draw by clicking on a grid and select colors using buttons.
 - A C++ compiler (GCC, Clang, or MSVC)
 
 ## How to Build (with CMake):
-Download and the repository by clicking *"Download ZIP"* **OR** ```git clone https://github.com/H4elme/Art```
+Download and the repository by clicking *"Download ZIP"* **OR** ```git clone https://github.com/H4elme/Art``` <br/>
+Inside of the repository:
 ```
-cd Art
 git clone https://github.com/google/googletest.git    
-mkdir build && cd build
+mkdir build
+cd build
 cmake ..
 cmake --build .
 ```
@@ -28,3 +29,11 @@ cmake --build .
 Go to *"build"* directory <br/>
 Double click *main.exe* (windows) or run in terminal *./main.exe*
 
+# To Build and Run Tests:
+```
+mkdir build
+cd build
+cmake ..
+cmake --build .
+ctest
+```
